@@ -1,0 +1,100 @@
+/* Clients Section */
+.clients-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, white, #f5f5f5);
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Title */
+.clients-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.clients-subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Logos Container */
+.clients-logos {
+    display: flex;
+    justify-content: center; /* Ensures all logos are in a single line */
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 50px;
+    overflow-x: auto; /* Enables horizontal scrolling on small screens */
+    white-space: nowrap; /* Prevents line break */
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Logo Styling */
+.clients-logos img {
+    height: 50px;
+    width: auto;
+    min-width: 100px; /* Ensures logos are large enough */
+    object-fit: contain;
+    filter: grayscale(30%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.clients-logos img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .clients-logos {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .clients-logos {
+        gap: 30px;
+        overflow-x: auto; /* Allows scrolling */
+        flex-wrap: nowrap; /* Prevents wrapping */
+    }
+
+    .clients-title {
+        font-size: 24px;
+    }
+
+    .clients-subtitle {
+        font-size: 14px;
+    }
+
+    .clients-logos img {
+        height: 45px;
+        min-width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-logos {
+        gap: 20px;
+        overflow-x: auto;
+    }
+
+    .clients-title {
+        font-size: 22px;
+    }
+
+    .clients-subtitle {
+        font-size: 13px;
+    }
+
+    .clients-logos img {
+        height: 40px;
+        min-width: 80px;
+    }
+}
