@@ -30,16 +30,17 @@ const BlogSection = () => {
   return (
     <motion.section 
       className="blog-section"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ amount: 0.2 }} // Ensures animation replays when in view
+      initial={{ x: -100 }}
+      whileInView={{ x: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ amount: 0.2 }}
     >
       <motion.div 
         className="blog-header"
-        initial={{ opacity: 0, y: -15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        initial={{ x: -50 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ amount: 0.2 }}
       >
         <h2>Caring is the new marketing</h2>
         <p>
@@ -56,8 +57,8 @@ const BlogSection = () => {
         whileInView="visible"
         viewport={{ amount: 0.2 }}
         variants={{
-          hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
+          hidden: { opacity: 1 },
+          visible: { transition: { staggerChildren: 0.2 } }
         }}
       >
         {blogPosts.map((post) => (
@@ -65,30 +66,22 @@ const BlogSection = () => {
             key={post.id}
             className="blog-card"
             variants={{
-              hidden: { opacity: 0, y: 40, scale: 0.9, rotateX: 10 },
-              visible: { opacity: 1, y: 0, scale: 1, rotateX: 0 }
+              hidden: { scale: 0.8, rotate: -5 },
+              visible: { scale: 1, rotate: 0, transition: { duration: 0.4 } }
             }}
+            whileInView="visible"
+            viewport={{ amount: 0.2 }}
             whileHover={{
               scale: 1.05,
-              rotateX: -5,
-              boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.2)",
+              rotate: 2,
               transition: { duration: 0.3, ease: "easeInOut" }
-            }}
-            animate={{
-              y: [0, -3, 0],
-            }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "reverse",
-              duration: 3,
-              ease: "easeInOut",
             }}
           >
             <motion.img
               src={post.image}
               alt={post.title}
               className="blog-image"
-              whileHover={{ scale: 1.08 }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             />
             <div className="blog-content">
