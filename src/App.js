@@ -7,6 +7,7 @@ import FeatureSection from './Components/Feature';
 import StatsSection from './Components/Stats';
 import HowToDesignSection from './Components/How';
 import CustomerSection from './Components/Customer';
+import BlogSection from './Components/Blogs';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
       <StatsSection />
       <HowToDesignSection />
       <CustomerSection />
+      <BlogSection />
     </div>
   );
 }

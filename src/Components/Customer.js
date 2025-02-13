@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/Customer.css"; // Import CSS file
 import Image from "../assets/image.png"; // Main image on left
-import Logo from "../assets/logo.png"; 
-import Logo1 from "../assets/logo1.png";
-import Logo2 from "../assets/logo2.png";
-import Logo3 from "../assets/logo3.png";
-import Logo4 from "../assets/logo4.png";
-import Logo5 from "../assets/logo5.png";
+import Logo from "../assets/Logo7.png"; 
+import Logo1 from "../assets/Logo8.png";
+import Logo2 from "../assets/Logo9.png";
+import Logo3 from "../assets/Logo10.png";
+import Logo4 from "../assets/Logo11.png";
+import Logo5 from "../assets/Logo12.png";
 
 const CustomerSection = () => {
   return (

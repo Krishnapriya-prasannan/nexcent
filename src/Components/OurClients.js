@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/OurClients.css"; // Import styles
-import logo1 from "../assets/logo.png";
+import logo1 from "../assets/Logo7.png";
 import logo2 from "../assets/Logo1.png";
 import logo3 from "../assets/Logo2.png";
 import logo4 from "../assets/Logo3.png";
