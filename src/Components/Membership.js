@@ -31,18 +31,18 @@ const data = [
 
 const MembershipSection = () => {
   return (
-    <motion.div 
+    <motion.div
       className="membership-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: true }} // Ensures it animates only once when scrolled into view
+      viewport={{ amount: 0.2 }}
     >
       <motion.h2
         initial={{ opacity: 0, y: -15 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        viewport={{ once: true }}
+        viewport={{ amount: 0.2 }}
       >
         Manage your entire community in a single system
       </motion.h2>
@@ -52,19 +52,19 @@ const MembershipSection = () => {
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
-        viewport={{ once: true }}
+        viewport={{ amount: 0.2 }}
       >
         Who is Netcomm suitable for?
       </motion.p>
 
-      <motion.div 
+      <motion.div
         className="membership-grid"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ amount: 0.2 }}
         variants={{
           hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
+          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
         }}
       >
         {data.map((item) => (
@@ -73,14 +73,23 @@ const MembershipSection = () => {
             className="membership-card"
             variants={{
               hidden: { opacity: 0, y: 40 },
-              visible: { opacity: 1, y: 0 }
+              visible: { opacity: 1, y: 0 },
             }}
             whileHover={{
-              scale: 1.04,
-              boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
+              scale: 1.05,
+              boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
               transition: { duration: 0.2, ease: "easeInOut" },
             }}
             whileTap={{ scale: 0.97 }}
+            animate={{
+              y: [0, -5, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 3,
+              ease: "easeInOut",
+            }}
           >
             <motion.img
               src={item.icon}
