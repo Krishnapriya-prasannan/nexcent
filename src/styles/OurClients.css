@@ -1,68 +1,112 @@
 /* Clients Section */
 .clients-section {
     text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to right, white, #f5f5f5);
+    padding: 70px 30px;
+    background: linear-gradient(to right, #ffffff, #f8f9fa); /* Light gradient for a softer look */
     overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Title */
 .clients-title {
-    font-size: 28px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
 }
 
 /* Subtitle */
 .clients-subtitle {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 40px;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 /* Logos Container */
 .clients-logos {
     display: flex;
-    justify-content: center; /* Ensures all logos are in a single line */
+    justify-content: center;
     align-items: center;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto;
-    gap: 50px;
-    overflow-x: auto; /* Enables horizontal scrolling on small screens */
-    white-space: nowrap; /* Prevents line break */
-    padding: 10px 0;
+    gap: 60px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents line breaks */
+    padding: 15px 0;
     scroll-behavior: smooth; /* Smooth scrolling */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.clients-logos::-webkit-scrollbar {
+    display: none;
 }
 
 /* Logo Styling */
 .clients-logos img {
-    height: 50px;
+    height: 60px; /* Increased size for a more premium look */
     width: auto;
-    min-width: 100px; /* Ensures logos are large enough */
+    min-width: 110px; /* Ensures logos are large enough */
     object-fit: contain;
-    filter: grayscale(30%);
-    transition: transform 0.3s ease-in-out;
+    filter: grayscale(40%); /* Subtle grayscale effect */
+    transition: transform 0.4s ease, filter 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 8px; /* Rounded edges for a modern touch */
 }
 
 /* Hover effect */
 .clients-logos img:hover {
     filter: grayscale(0%);
-    transform: scale(1.1);
+    transform: scale(1.15); /* Enlarges on hover */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
     .clients-logos {
-        gap: 40px;
+        gap: 50px;
     }
 }
 
 @media (max-width: 768px) {
+    .clients-section {
+        padding: 60px 25px;
+    }
+
+    .clients-logos {
+        gap: 40px;
+        overflow-x: auto;
+    }
+
+    .clients-title {
+        font-size: 28px;
+    }
+
+    .clients-subtitle {
+        font-size: 16px;
+    }
+
+    .clients-logos img {
+        height: 50px;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-section {
+        padding: 50px 20px;
+    }
+
     .clients-logos {
         gap: 30px;
-        overflow-x: auto; /* Allows scrolling */
-        flex-wrap: nowrap; /* Prevents wrapping */
+        overflow-x: auto;
     }
 
     .clients-title {
@@ -76,25 +120,5 @@
     .clients-logos img {
         height: 45px;
         min-width: 90px;
-    }
-}
-
-@media (max-width: 480px) {
-    .clients-logos {
-        gap: 20px;
-        overflow-x: auto;
-    }
-
-    .clients-title {
-        font-size: 22px;
-    }
-
-    .clients-subtitle {
-        font-size: 13px;
-    }
-
-    .clients-logos img {
-        height: 40px;
-        min-width: 80px;
     }
 }

@@ -68,7 +68,7 @@ body {
 
 /* Register Button */
 .nav-button .register-btn {
-  background: #3a6ad6;
+  background: #218838;
   color: white;
   padding: 10px 25px;
   border-radius: 5px;
@@ -79,7 +79,7 @@ body {
 }
 
 .nav-button .register-btn:hover {
-  background: #3a6ad6;
+  background: #218838;
 }
 
 /* Mobile Menu Icon */

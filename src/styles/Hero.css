@@ -45,7 +45,7 @@
 }
 
 .hero-text h1 span {
-  color: #3a6ad6;
+  color:#218838;
 }
 
 .hero-text p {
@@ -57,7 +57,7 @@
 .register-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #3a6ad6;
+  background-color: #218838;
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
@@ -67,7 +67,7 @@
 }
 
 .register-btn:hover {
-  background-color: #3a6ad6;
+  background-color: #218838;
 }
 
 /* Image Area */
