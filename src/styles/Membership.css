@@ -1,102 +1,104 @@
 .membership-section {
-    width: 100%;
-    text-align: center;
-    padding: 60px 30px; /* Increased padding for a spacious look */
-    background-color: #f9fafb; /* Light background for better contrast */
+  width: 100%;
+  text-align: center;
+  padding: 70px 30px;
+  background: linear-gradient(to bottom, #f9fafb, #e2e8f0);
+}
+
+.membership-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subheading {
+  font-size: 18px;
+  color: #6b7280;
+  margin-top: 8px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.membership-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.membership-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.membership-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.membership-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.membership-card p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .membership-section {
+    padding: 50px 20px;
   }
-  
-  .membership-section h2 {
-    font-size: 32px; /* Larger title */
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 8px;
-  }
-  
-  .subheading {
-    font-size: 18px;
-    color: #6b7280;
-    margin-top: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-  }
-  
+
   .membership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger cards */
-    gap: 25px; /* More spacing between cards */
-    max-width: 1200px;
-    margin: 40px auto 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-  
+}
+
+@media (max-width: 768px) {
+  .membership-section h2 {
+    font-size: 28px;
+  }
+
+  .subheading {
+    font-size: 16px;
+  }
+
+  .membership-grid {
+    gap: 20px;
+  }
+
   .membership-card {
-    background: white;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
-    border-radius: 12px; /* Smoother corners */
-    padding: 25px;
-    border: 1px solid #e5e7eb;
-    text-align: center;
-    transition: 0.3s ease-in-out;
+    padding: 20px;
   }
-  
-  .membership-card:hover {
-    transform: translateY(-5px); /* Hover effect */
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 480px) {
+  .membership-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .membership-icon {
-    width: 60px; /* Increased icon size */
-    height: 60px;
-    margin-bottom: 15px;
-  }
-  
-  .membership-card h3 {
-    font-size: 22px; /* Slightly larger heading */
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 10px;
-  }
-  
-  .membership-card p {
-    font-size: 17px;
-    color: #6b7280;
-    margin-top: 10px;
-    line-height: 1.6;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .membership-section {
-      padding: 50px 20px;
-    }
-  
-    .membership-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .membership-section h2 {
-      font-size: 28px;
-    }
-  
-    .subheading {
-      font-size: 16px;
-    }
-  
-    .membership-grid {
-      gap: 20px;
-    }
-  
-    .membership-card {
-      padding: 20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .membership-grid {
-      grid-template-columns: 1fr; /* Stacks on small screens */
-    }
-  }
-  
+}
