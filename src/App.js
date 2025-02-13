@@ -6,6 +6,7 @@ import MembershipSection from './Components/Membership';
 import FeatureSection from './Components/Feature';
 import StatsSection from './Components/Stats';
 import HowToDesignSection from './Components/How';
+import CustomerSection from './Components/Customer';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <FeatureSection />
       <StatsSection />
       <HowToDesignSection />
+      <CustomerSection />
     </div>
   );
 }
