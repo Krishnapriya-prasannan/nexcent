@@ -1,0 +1,92 @@
+.stats-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 60px 80px;
+    gap: 40px; /* Reduce unnecessary space */
+}
+
+/* Left Side (Text Section) */
+.stats-text {
+    flex: 1;  /* Allow dynamic width */
+    max-width: 40%;
+}
+
+.stats-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.stats-text .highlight {
+    color: #4caf50;
+}
+
+.stats-text p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Right Side (Stats Section) */
+.stats-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 50px;
+}
+
+/* Each Statistic */
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icon */
+.stat img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Number */
+.stat h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+/* Label */
+.stat p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+    .stats-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .stats-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+        
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat {
+        justify-content: center;
+    }
+}
