@@ -15,11 +15,17 @@ const statsData = [
 
 const StatsSection = () => {
   return (
-    <div className="stats-section">
+    <motion.div 
+      className="stats-section"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }} // Ensures animation runs only once when in view
+    >
       <motion.div 
         className="stats-text"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2>
@@ -31,14 +37,22 @@ const StatsSection = () => {
 
       <motion.div 
         className="stats-container"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
+        }}
       >
-        {statsData.map((stat, index) => (
+        {statsData.map((stat) => (
           <motion.div 
             key={stat.id} 
             className="stat"
+            variants={{
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: { opacity: 1, scale: 1 }
+            }}
             whileHover={{ scale: 1.1, rotate: 2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
@@ -47,8 +61,8 @@ const StatsSection = () => {
               src={stat.icon} 
               alt={stat.label} 
               className="stat-icon"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             />
             <div>
@@ -58,7 +72,7 @@ const StatsSection = () => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

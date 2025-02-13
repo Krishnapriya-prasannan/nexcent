@@ -31,34 +31,49 @@ const data = [
 
 const MembershipSection = () => {
   return (
-    <div className="membership-section">
+    <motion.div 
+      className="membership-section"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }} // Ensures it animates only once when scrolled into view
+    >
       <motion.h2
         initial={{ opacity: 0, y: -15 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
       >
         Manage your entire community in a single system
       </motion.h2>
+
       <motion.p
         className="subheading"
         initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
+        viewport={{ once: true }}
       >
         Who is Netcomm suitable for?
       </motion.p>
 
-      <div className="membership-grid">
+      <motion.div 
+        className="membership-grid"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 40 },
+          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } }
+        }}
+      >
         {data.map((item) => (
           <motion.div
             key={item.id}
             className="membership-card"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              ease: "easeOut",
-              delay: item.id * 0.1,
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 }
             }}
             whileHover={{
               scale: 1.04,
@@ -78,8 +93,8 @@ const MembershipSection = () => {
             <p>{item.description}</p>
           </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
