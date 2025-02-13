@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/OurClients.css"; // Import styles
+import { motion } from "framer-motion";
+import "../styles/OurClients.css";
 import logo1 from "../assets/Logo7.png";
 import logo2 from "../assets/Logo1.png";
 import logo3 from "../assets/Logo2.png";
@@ -13,13 +14,34 @@ const ClientsSection = () => {
 
   return (
     <section className="clients-section">
-      <h2 className="clients-title">Our Clients</h2>
-      <p className="clients-subtitle">
+      <motion.h2 
+        className="clients-title"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Our Clients
+      </motion.h2>
+      <motion.p 
+        className="clients-subtitle"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         We have been working with some Fortune 500+ clients
-      </p>
+      </motion.p>
       <div className="clients-logos">
         {logos.map((logo, index) => (
-          <img key={index} src={logo} alt={`Client Logo ${index + 1}`} />
+          <motion.img
+            key={index}
+            src={logo}
+            alt={`Client Logo ${index + 1}`}
+            className="client-logo"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.2, rotateY: 10 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          />
         ))}
       </div>
     </section>
