@@ -11,11 +11,11 @@ body {
   font-family: "Arial", sans-serif;
 }
 
-/* General Navbar Styling */
+/* Navbar Styling */
 .navbar {
   background: white;
   padding: 15px 40px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   width: 100%;
@@ -32,18 +32,21 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
-  overflow: hidden;
 }
 
 /* Logo Styling */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .nav-logo img {
-  height: 40px;
+  height: 45px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
 }
 
 /* Nav Links */
@@ -59,41 +62,59 @@ body {
   color: #555;
   font-size: 18px;
   font-weight: 500;
-  transition: 0.3s;
+  position: relative;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links li a:hover {
   color: #222;
 }
 
+/* Underline Animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #218838;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
 /* Register Button */
 .nav-button .register-btn {
   background: #218838;
   color: white;
-  padding: 10px 25px;
-  border-radius: 5px;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
   font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-button .register-btn:hover {
-  background: #218838;
+  background: #1a6f2a;
+  transform: scale(1.05);
 }
 
 /* Mobile Menu Icon */
 .menu-icon {
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   display: none;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Fix for Larger Screens */
-@media (min-width: 1200px) {
-  .nav-container {
-    max-width: 1200px;
-  }
+.menu-icon:hover {
+  transform: scale(1.1);
 }
 
 /* Responsive Design */
@@ -112,7 +133,7 @@ body {
 
   .nav-button .register-btn {
     font-size: 14px;
-    padding: 8px 20px;
+    padding: 10px 24px;
   }
 }
 
@@ -150,4 +171,4 @@ body {
     text-align: center;
     width: 100%;
   }
-}
+} 
