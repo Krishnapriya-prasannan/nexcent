@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Customer.css"; // Import CSS file
 import Image from "../assets/image.png"; // Main image on left
-import Logo from "../assets/Logo7.png"; 
+import Logo from "../assets/Logo13.png"; 
 import Logo1 from "../assets/Logo8.png";
 import Logo2 from "../assets/Logo9.png";
 import Logo3 from "../assets/Logo10.png";
